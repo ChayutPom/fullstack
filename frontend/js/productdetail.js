@@ -10,13 +10,17 @@ $(function () {
     function getData() {
         // #14 Get a selected product and display as a form
         // use $.get
-        $.ajax({
-            url: url,
-            type: 'GET',
-            success: function (result) {
-                $("#form").html(result);
-            }
-        });
+        $.get(url, function (data, status) {
+               
+    var item = `<th>${data.serialno}</th>
+            <th>${data.name}</th>
+            <th>${data.category}</th>
+            <th>${dat.price}</th>
+            <th>${data.photo}</th>
+            <th> <button type="button" class="close">Delete</button></th>`    
+        $("#form").append(item);
+    
+          });
         // ===============================
     }
 
