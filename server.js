@@ -1,12 +1,15 @@
 // call the packages we need
 // #1 Add express package to the app
+var express = require('express');
 
+var app = express();
 // ===============================
 
 var app = express();   
 var cors = require('cors');       
 
 // #2 Add body-parser package to the app
+var bodyParser = require('body-parser');
 
 // ===============================
 
@@ -18,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // #3 Serve static content in folder frontend
-
+app.use(express.static('frontend'));
 // ===============================
 
 
